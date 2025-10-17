@@ -179,7 +179,6 @@
     }
 moyenne = somme / 10;
     
-    
   
 
     // Affiche la moyenne
