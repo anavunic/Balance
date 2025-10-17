@@ -11,19 +11,12 @@
   #define EAP_PASSWORD "Sofia1974!" //mot de passe EDUROAM
   #define EAP_USERNAME "sofia.proville@etu.univ-amu.fr"
 
-//Déclaration des variables
-  float masse ;
-  float humidity;
-  float moyenne;
-  
-   
 //Connexion wifi
   #define CONNECTION_TIMEOUT 10
   int timeout_counter = 0;
   const char* ssid = "eduroam";
   WiFiClient espClient;
   PubSubClient client(espClient);
-
 //Connexion réseau
   void get_network_info(){
     if(WiFi.status() == WL_CONNECTED) {
@@ -32,25 +25,27 @@
         Serial.println((String)"[+] RSSI : " + WiFi.RSSI() + " dB");
     }
   }
-
   WiFi.disconnect(true);
   WiFi.begin(ssid, WPA2_AUTH_PEAP, EAP_IDENTITY, EAP_USERNAME, EAP_PASSWORD); 
-  
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(F("."));
   }
-
   Serial.println("");
   Serial.println(F("L'ESP32 est connecté au WiFi !"));
 
-//Humidité
+//Déclaration des variables
+  float masse ;
+  float humidity;
+  float moyenne;
+  
+   
+//Déclaration des PIN
   #define DHTPIN 16  
   #define DHTTYPE DHT11
-  HX711 scale;
   DHT dht(DHTPIN, DHTTYPE);
+  HX711 scale;
 
-//Déclaration des pins HX711
   const int LOADCELL_DOUT_PIN = 4;
   const int LOADCELL_SCK_PIN = 18;
 
