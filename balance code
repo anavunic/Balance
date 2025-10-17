@@ -8,7 +8,7 @@
 
 //Identifiants numériques au sein de l'organisation
   #define EAP_IDENTITY "sofia.proville@etu.univ-amu.fr"
-  #define EAP_PASSWORD "Sofia1974!" //mot de passe EDUROAM
+  #define EAP_PASSWORD "Sofia197" //mot de passe EDUROAM
   #define EAP_USERNAME "sofia.proville@etu.univ-amu.fr"
 
 //Connexion wifi
